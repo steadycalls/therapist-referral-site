@@ -20,7 +20,7 @@ export default function Home() {
         <div className="container py-4">
           <div className="flex items-center justify-between">
             <Link href="/">
-              <a className="text-2xl font-bold text-primary">TherapyConnect</a>
+              <a className="text-2xl font-bold text-primary">Leverage Therapy</a>
             </Link>
             <nav className="hidden md:flex items-center gap-6">
               <Link href="/therapists">
@@ -36,7 +36,7 @@ export default function Home() {
                 <a className="text-sm font-medium hover:text-primary transition-colors">About</a>
               </Link>
               <Button asChild variant="secondary" size="sm">
-                <a href="https://www.betterhelp.com/get-started/?utm_source=therapyconnect" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.betterhelp.com/get-started/?utm_source=leveragetherapy" target="_blank" rel="noopener noreferrer">
                   Get Started
                 </a>
               </Button>
@@ -63,7 +63,7 @@ export default function Home() {
                 </Link>
               </Button>
               <Button asChild size="lg" variant="outline" className="text-lg px-8">
-                <a href="https://www.betterhelp.com/get-started/?utm_source=therapyconnect" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.betterhelp.com/get-started/?utm_source=leveragetherapy" target="_blank" rel="noopener noreferrer">
                   Start Online Therapy
                 </a>
               </Button>
@@ -75,10 +75,10 @@ export default function Home() {
       {/* Disclosure Banner */}
       <div className="bg-muted/50 border-b">
         <div className="container py-3">
-          <p className="text-sm text-center text-muted-foreground">
-            TherapyConnect is user-supported. If you buy through a link on the site, we earn a commission from BetterHelp at no cost to you.{" "}
+          <p className="text-sm text-muted-foreground mb-2">
+            Leverage Therapy is user-supported. If you buy through a link on the site, we earn a commission from BetterHelp at no cost to you.{" "}
             <Link href="/disclosure">
-              <a className="text-primary hover:underline">Learn More</a>
+              <a className="underline hover:text-primary">Learn More</a>
             </Link>
           </p>
         </div>
@@ -226,7 +226,7 @@ export default function Home() {
               </div>
             </div>
             <Button asChild size="lg" variant="secondary" className="text-lg px-12">
-              <a href="https://www.betterhelp.com/get-started/?utm_source=therapyconnect" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.betterhelp.com/get-started/?utm_source=leveragetherapy" target="_blank" rel="noopener noreferrer">
                 Get Started Now
               </a>
             </Button>
@@ -291,7 +291,7 @@ export default function Home() {
         <div className="container">
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div>
-              <h3 className="font-bold text-lg mb-4">TherapyConnect</h3>
+              <h3 className="font-bold text-lg mb-4">Leverage Therapy</h3>
               <p className="text-sm text-muted-foreground">
                 Connecting you with licensed mental health professionals for affordable, convenient online therapy.
               </p>
@@ -320,14 +320,14 @@ export default function Home() {
                 If you're in crisis, call the National Suicide Prevention Lifeline at 988.
               </p>
               <Button asChild variant="secondary" className="w-full">
-                <a href="https://www.betterhelp.com/get-started/?utm_source=therapyconnect" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.betterhelp.com/get-started/?utm_source=leveragetherapy" target="_blank" rel="noopener noreferrer">
                   Start Therapy
                 </a>
               </Button>
             </div>
           </div>
           <div className="border-t pt-8 text-center text-sm text-muted-foreground">
-            <p>© 2024 TherapyConnect. All rights reserved.</p>
+            <p>© 2024 Leverage Therapy. All rights reserved.</p>
             <p className="mt-2">
               We earn a commission from BetterHelp at no cost to you when you sign up through our links.
             </p>

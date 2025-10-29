@@ -31,7 +31,7 @@ export default function Therapists() {
         <div className="container py-4">
           <div className="flex items-center justify-between">
             <Link href="/">
-              <a className="text-2xl font-bold text-primary">TherapyConnect</a>
+              <a className="text-2xl font-bold text-primary">Leverage Therapy</a>
             </Link>
             <nav className="hidden md:flex items-center gap-6">
               <Link href="/therapists">
@@ -44,7 +44,7 @@ export default function Therapists() {
                 <a className="text-sm font-medium hover:text-primary transition-colors">Blog</a>
               </Link>
               <Button asChild variant="secondary" size="sm">
-                <a href="https://www.betterhelp.com/get-started/?utm_source=therapyconnect" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.betterhelp.com/get-started/?utm_source=leveragetherapy" target="_blank" rel="noopener noreferrer">
                   Get Started
                 </a>
               </Button>
@@ -175,7 +175,7 @@ export default function Therapists() {
             Get matched with a licensed therapist in minutes through our partner, BetterHelp.
           </p>
           <Button asChild size="lg" variant="secondary">
-            <a href="https://www.betterhelp.com/get-started/?utm_source=therapyconnect" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.betterhelp.com/get-started/?utm_source=leveragetherapy" target="_blank" rel="noopener noreferrer">
               Get Started Now
             </a>
           </Button>

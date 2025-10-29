@@ -1,6 +1,6 @@
 # Deployment Guide for SSDNodes VPS
 
-This guide will help you deploy TherapyConnect to your SSDNodes VPS using Docker.
+This guide will help you deploy Leverage Therapy to your SSDNodes VPS using Docker.
 
 ## Prerequisites
 
@@ -69,7 +69,7 @@ OWNER_OPEN_ID=your-owner-id
 OWNER_NAME=Your Name
 
 # Optional: Application Settings
-VITE_APP_TITLE=TherapyConnect
+VITE_APP_TITLE=Leverage Therapy
 VITE_APP_LOGO=/logo.png
 
 # Production

@@ -17,7 +17,7 @@ export default function BlogPost() {
         <header className="border-b bg-white sticky top-0 z-50">
           <div className="container py-4">
             <Link href="/">
-              <a className="text-2xl font-bold text-primary">TherapyConnect</a>
+              <a className="text-2xl font-bold text-primary">Leverage Therapy</a>
             </Link>
           </div>
         </header>
@@ -43,7 +43,7 @@ export default function BlogPost() {
         <header className="border-b bg-white sticky top-0 z-50">
           <div className="container py-4">
             <Link href="/">
-              <a className="text-2xl font-bold text-primary">TherapyConnect</a>
+              <a className="text-2xl font-bold text-primary">Leverage Therapy</a>
             </Link>
           </div>
         </header>
@@ -65,7 +65,7 @@ export default function BlogPost() {
         <div className="container py-4">
           <div className="flex items-center justify-between">
             <Link href="/">
-              <a className="text-2xl font-bold text-primary">TherapyConnect</a>
+              <a className="text-2xl font-bold text-primary">Leverage Therapy</a>
             </Link>
             <nav className="hidden md:flex items-center gap-6">
               <Link href="/therapists">
@@ -78,7 +78,7 @@ export default function BlogPost() {
                 <a className="text-sm font-medium text-primary">Blog</a>
               </Link>
               <Button asChild variant="secondary" size="sm">
-                <a href="https://www.betterhelp.com/get-started/?utm_source=therapyconnect" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.betterhelp.com/get-started/?utm_source=leveragetherapy" target="_blank" rel="noopener noreferrer">
                   Get Started
                 </a>
               </Button>
@@ -156,7 +156,7 @@ export default function BlogPost() {
                 </div>
               </div>
               <Button asChild size="lg" variant="secondary" className="px-12">
-                <a href="https://www.betterhelp.com/get-started/?utm_source=therapyconnect" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.betterhelp.com/get-started/?utm_source=leveragetherapy" target="_blank" rel="noopener noreferrer">
                   Get Started Now
                 </a>
               </Button>

@@ -17,7 +17,7 @@ export default function TherapistDetail() {
         <header className="border-b bg-white sticky top-0 z-50">
           <div className="container py-4">
             <Link href="/">
-              <a className="text-2xl font-bold text-primary">TherapyConnect</a>
+              <a className="text-2xl font-bold text-primary">Leverage Therapy</a>
             </Link>
           </div>
         </header>
@@ -38,7 +38,7 @@ export default function TherapistDetail() {
         <header className="border-b bg-white sticky top-0 z-50">
           <div className="container py-4">
             <Link href="/">
-              <a className="text-2xl font-bold text-primary">TherapyConnect</a>
+              <a className="text-2xl font-bold text-primary">Leverage Therapy</a>
             </Link>
           </div>
         </header>
@@ -63,7 +63,7 @@ export default function TherapistDetail() {
         <div className="container py-4">
           <div className="flex items-center justify-between">
             <Link href="/">
-              <a className="text-2xl font-bold text-primary">TherapyConnect</a>
+              <a className="text-2xl font-bold text-primary">Leverage Therapy</a>
             </Link>
             <nav className="hidden md:flex items-center gap-6">
               <Link href="/therapists">
@@ -76,7 +76,7 @@ export default function TherapistDetail() {
                 <a className="text-sm font-medium hover:text-primary transition-colors">Blog</a>
               </Link>
               <Button asChild variant="secondary" size="sm">
-                <a href={therapist.betterHelpAffiliateUrl || "https://www.betterhelp.com/get-started/?utm_source=therapyconnect"} target="_blank" rel="noopener noreferrer">
+                <a href={therapist.betterHelpAffiliateUrl || "https://www.betterhelp.com/get-started/?utm_source=leveragetherapy"} target="_blank" rel="noopener noreferrer">
                   Get Started
                 </a>
               </Button>
@@ -89,7 +89,7 @@ export default function TherapistDetail() {
       <div className="bg-muted/50 border-b">
         <div className="container py-3">
           <p className="text-sm text-center text-muted-foreground">
-            TherapyConnect is user-supported. If you buy through a link on the site, we earn a commission from BetterHelp at no cost to you.{" "}
+            Leverage Therapy is user-supported. If you buy through a link on the site, we earn a commission from BetterHelp at no cost to you.{" "}
             <Link href="/disclosure">
               <a className="text-primary hover:underline">Learn More</a>
             </Link>
@@ -123,7 +123,7 @@ export default function TherapistDetail() {
                       </div>
                     </div>
                     <Button asChild variant="secondary" size="lg" className="w-full md:w-auto">
-                      <a href={therapist.betterHelpAffiliateUrl || "https://www.betterhelp.com/get-started/?utm_source=therapyconnect"} target="_blank" rel="noopener noreferrer">
+                      <a href={therapist.betterHelpAffiliateUrl || "https://www.betterhelp.com/get-started/?utm_source=leveragetherapy"} target="_blank" rel="noopener noreferrer">
                         Chat Now
                       </a>
                     </Button>
@@ -311,7 +311,7 @@ export default function TherapistDetail() {
                     </div>
                   </div>
                   <Button asChild variant="secondary" size="lg" className="w-full">
-                    <a href={therapist.betterHelpAffiliateUrl || "https://www.betterhelp.com/get-started/?utm_source=therapyconnect"} target="_blank" rel="noopener noreferrer">
+                    <a href={therapist.betterHelpAffiliateUrl || "https://www.betterhelp.com/get-started/?utm_source=leveragetherapy"} target="_blank" rel="noopener noreferrer">
                       Chat Now
                     </a>
                   </Button>

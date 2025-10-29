@@ -13,7 +13,7 @@ services:
       - OAUTH_SERVER_URL=${OAUTH_SERVER_URL:-https://api.manus.im}
       - VITE_OAUTH_PORTAL_URL=${VITE_OAUTH_PORTAL_URL:-https://login.manus.im}
       - VITE_APP_ID=${VITE_APP_ID}
-      - VITE_APP_TITLE=${VITE_APP_TITLE:-TherapyConnect}
+      - VITE_APP_TITLE=${VITE_APP_TITLE:-Leverage Therapy}
       - VITE_APP_LOGO=${VITE_APP_LOGO:-/logo.png}
       - OWNER_OPEN_ID=${OWNER_OPEN_ID}
       - OWNER_NAME=${OWNER_NAME}

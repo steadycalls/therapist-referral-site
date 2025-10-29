@@ -1,6 +1,6 @@
 # Webhook API Documentation
 
-This document describes the webhook endpoints available for programmatically adding content to TherapyConnect.
+This document describes the webhook endpoints available for programmatically adding content to Leverage Therapy.
 
 ## Authentication
 

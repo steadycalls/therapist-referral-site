@@ -54,3 +54,6 @@
 - [x] Create webhook endpoint for adding new therapist listings
 - [x] Create webhook endpoint for adding new services
 - [x] Add authentication/API key validation for webhooks
+
+## Branding Updates
+- [x] Update site name from TherapyConnect to Leverage Therapy

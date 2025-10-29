@@ -14,7 +14,7 @@ export default function Blog() {
         <div className="container py-4">
           <div className="flex items-center justify-between">
             <Link href="/">
-              <a className="text-2xl font-bold text-primary">TherapyConnect</a>
+              <a className="text-2xl font-bold text-primary">Leverage Therapy</a>
             </Link>
             <nav className="hidden md:flex items-center gap-6">
               <Link href="/therapists">
@@ -27,7 +27,7 @@ export default function Blog() {
                 <a className="text-sm font-medium text-primary">Blog</a>
               </Link>
               <Button asChild variant="secondary" size="sm">
-                <a href="https://www.betterhelp.com/get-started/?utm_source=therapyconnect" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.betterhelp.com/get-started/?utm_source=leveragetherapy" target="_blank" rel="noopener noreferrer">
                   Get Started
                 </a>
               </Button>
@@ -114,7 +114,7 @@ export default function Blog() {
             Connect with a licensed therapist today and start your journey to better mental health.
           </p>
           <Button asChild size="lg" variant="secondary">
-            <a href="https://www.betterhelp.com/get-started/?utm_source=therapyconnect" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.betterhelp.com/get-started/?utm_source=leveragetherapy" target="_blank" rel="noopener noreferrer">
               Get Started Now
             </a>
           </Button>

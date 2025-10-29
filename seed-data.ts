@@ -50,7 +50,7 @@ async function seed() {
       npiNumber: "1234567890",
       rating: 48,
       reviewCount: 24,
-      betterHelpAffiliateUrl: "https://www.betterhelp.com/get-started/?utm_source=therapyconnect",
+      betterHelpAffiliateUrl: "https://www.betterhelp.com/get-started/?utm_source=leveragetherapy",
       isActive: true,
     },
     {
@@ -69,7 +69,7 @@ async function seed() {
       npiNumber: "0987654321",
       rating: 50,
       reviewCount: 18,
-      betterHelpAffiliateUrl: "https://www.betterhelp.com/get-started/?utm_source=therapyconnect",
+      betterHelpAffiliateUrl: "https://www.betterhelp.com/get-started/?utm_source=leveragetherapy",
       isActive: true,
     },
     {
@@ -88,7 +88,7 @@ async function seed() {
       npiNumber: "1122334455",
       rating: 46,
       reviewCount: 31,
-      betterHelpAffiliateUrl: "https://www.betterhelp.com/get-started/?utm_source=therapyconnect",
+      betterHelpAffiliateUrl: "https://www.betterhelp.com/get-started/?utm_source=leveragetherapy",
       isActive: true,
     },
     {
@@ -107,7 +107,7 @@ async function seed() {
       npiNumber: "5566778899",
       rating: 49,
       reviewCount: 15,
-      betterHelpAffiliateUrl: "https://www.betterhelp.com/get-started/?utm_source=therapyconnect",
+      betterHelpAffiliateUrl: "https://www.betterhelp.com/get-started/?utm_source=leveragetherapy",
       isActive: true,
     },
   ];

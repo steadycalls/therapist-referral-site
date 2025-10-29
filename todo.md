@@ -80,3 +80,6 @@
 - [x] Add AI rewrite functionality for blog posts
 - [x] Implement AI description generator for services
 - [x] Add AI content improvement suggestions
+
+## Bug Fixes
+- [x] Fix BetterHelp affiliate URL to use leveragetherapy instead of therapyconnect

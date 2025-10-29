@@ -6,11 +6,13 @@ import { z } from "zod";
 import * as db from "./db";
 import { aiRouter } from "./aiRouter";
 import { aiReviewRouter } from "./aiReviewRouter";
+import { userProfileRouter } from "./userProfileRouter";
 
 export const appRouter = router({
   system: systemRouter,
   ai: aiRouter,
   aiReview: aiReviewRouter,
+  userProfile: userProfileRouter,
   auth: router({
     me: publicProcedure.query(opts => opts.ctx.user),
     logout: publicProcedure.mutation(({ ctx }) => {
@@ -29,7 +31,7 @@ export const appRouter = router({
       }).optional())
       .query(async ({ input }) => {
         return await db.getAllTherapists({
-          isActive: true,
+          isActive: 1,
           specialtyId: input?.specialtyId,
         });
       }),
@@ -120,7 +122,7 @@ export const appRouter = router({
       .mutation(async ({ input }) => {
         return await db.createReview({
           ...input,
-          isApproved: false, // Reviews need admin approval
+          isApproved: 0, // Reviews need admin approval
         });
       }),
   }),
@@ -142,7 +144,7 @@ export const appRouter = router({
       .mutation(async ({ input }) => {
         return await db.createReview({
           ...input,
-          isApproved: false, // Reviews need admin approval
+          isApproved: 0, // Reviews need admin approval
         });
       }),
     
@@ -213,7 +215,11 @@ export const appRouter = router({
         if (ctx.user.role !== "admin") {
           throw new Error("Unauthorized");
         }
-        return await db.updateBlogPost(input.id, input.data);
+        const updateData = { ...input.data };
+        if (updateData.isPublished !== undefined) {
+          updateData.isPublished = updateData.isPublished ? 1 : 0 as any;
+        }
+        return await db.updateBlogPost(input.id, updateData);
       }),
   }),
 

@@ -50,6 +50,7 @@ router.post("/blog-post", async (req, res) => {
     
     await db.createBlogPost({
       ...data,
+      isPublished: data.isPublished ? 1 : 0,
       publishedAt: data.isPublished ? new Date() : undefined,
       authorId: undefined, // Webhook posts don't have an author
     });
@@ -118,7 +119,7 @@ router.post("/therapist", async (req, res) => {
     await db.createTherapist({
       ...therapistData,
       languagesSpoken: languagesSpoken ? JSON.stringify(languagesSpoken) : undefined,
-      isActive: true,
+      isActive: 1,
     });
 
     // Get the created therapist to get its ID
@@ -178,7 +179,7 @@ router.post("/service", async (req, res) => {
     
     await db.createService({
       ...data,
-      isActive: true,
+      isActive: 1,
     });
 
     res.status(201).json({ 

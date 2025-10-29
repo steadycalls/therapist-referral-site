@@ -100,3 +100,12 @@
 - [x] Create testing interface for AI summary prompts
 - [x] Add star rating aggregation and display
 - [ ] Implement review sorting and filtering
+
+## User Profile System
+- [x] Create user profile page with editable fields
+- [x] Add profile photo upload functionality
+- [x] Implement saved therapists/favorites feature
+- [ ] Add appointment booking history
+- [x] Create user preferences and settings
+- [x] Add notification preferences
+- [x] Implement user dashboard

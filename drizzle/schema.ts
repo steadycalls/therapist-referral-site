@@ -1,5 +1,8 @@
-import { int, mysqlEnum, mysqlTable, text, timestamp, varchar, boolean, decimal } from "drizzle-orm/mysql-core";
+import { int, mysqlEnum, mysqlTable, text, timestamp, varchar } from "drizzle-orm/mysql-core";
 import { relations } from "drizzle-orm";
+
+// Import user profile tables
+export * from "./user-profiles-schema";
 
 /**
  * Core user table backing auth flow.
@@ -11,6 +14,18 @@ export const users = mysqlTable("users", {
   email: varchar("email", { length: 320 }),
   loginMethod: varchar("loginMethod", { length: 64 }),
   role: mysqlEnum("role", ["user", "admin"]).default("user").notNull(),
+  
+  // Profile fields
+  bio: text("bio"),
+  photoUrl: varchar("photoUrl", { length: 500 }),
+  phone: varchar("phone", { length: 20 }),
+  dateOfBirth: timestamp("dateOfBirth"),
+  location: varchar("location", { length: 255 }),
+  
+  // Preferences
+  emailNotifications: int("emailNotifications").default(1),
+  smsNotifications: int("smsNotifications").default(0),
+  
   createdAt: timestamp("createdAt").defaultNow().notNull(),
   updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
   lastSignedIn: timestamp("lastSignedIn").defaultNow().notNull(),
@@ -76,7 +91,7 @@ export const therapists = mysqlTable("therapists", {
   rating: int("rating").default(0), // Average rating * 10 (e.g., 4.6 = 46)
   reviewCount: int("reviewCount").default(0),
   betterHelpAffiliateUrl: varchar("betterHelpAffiliateUrl", { length: 500 }),
-  isActive: boolean("isActive").default(true),
+  isActive: int("isActive").default(1),
   createdAt: timestamp("createdAt").defaultNow().notNull(),
   updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
 });
@@ -119,7 +134,7 @@ export const reviews = mysqlTable("reviews", {
   rating: int("rating").notNull(), // 1-5 stars
   reviewText: text("reviewText"),
   reviewerName: varchar("reviewerName", { length: 100 }),
-  isApproved: boolean("isApproved").default(false),
+  isApproved: int("isApproved").default(0),
   createdAt: timestamp("createdAt").defaultNow().notNull(),
 });
 
@@ -152,7 +167,7 @@ export const blogPosts = mysqlTable("blog_posts", {
   featuredImageUrl: varchar("featuredImageUrl", { length: 500 }),
   authorId: int("authorId"),
   categoryId: int("categoryId"),
-  isPublished: boolean("isPublished").default(false),
+  isPublished: int("isPublished").default(0),
   publishedAt: timestamp("publishedAt"),
   viewCount: int("viewCount").default(0),
   createdAt: timestamp("createdAt").defaultNow().notNull(),
@@ -173,7 +188,7 @@ export const services = mysqlTable("services", {
   content: text("content"),
   iconName: varchar("iconName", { length: 100 }),
   displayOrder: int("displayOrder").default(0),
-  isActive: boolean("isActive").default(true),
+  isActive: int("isActive").default(1),
   createdAt: timestamp("createdAt").defaultNow().notNull(),
   updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
 });

@@ -1,12 +1,12 @@
 #!/bin/bash
 
-# Quick Setup Script for ClarityTherapy.app on SSDNodes VPS
+# Quick Setup Script for LeverageTherapy.app on SSDNodes VPS
 # Run this script on your VPS after cloning the repository
 
 set -e  # Exit on error
 
 echo "================================"
-echo "ClarityTherapy.app Setup Script"
+echo "LeverageTherapy.app Setup Script"
 echo "================================"
 echo ""
 
@@ -87,7 +87,7 @@ JWT_SECRET=$JWT_SECRET
 WEBHOOK_API_KEY=$WEBHOOK_KEY
 
 # Application Settings
-VITE_APP_TITLE=ClarityTherapy
+VITE_APP_TITLE=LeverageTherapy
 NODE_ENV=production
 EOF
     
@@ -103,7 +103,7 @@ fi
 # Configure Nginx
 echo ""
 echo "🌐 Configuring Nginx..."
-cp nginx/claritytherapy.app.conf /etc/nginx/sites-available/claritytherapy.app
+cp nginx/leveragetherapy.com.conf /etc/nginx/sites-available/leveragetherapy.com
 
 # Remove default site if exists
 if [ -f /etc/nginx/sites-enabled/default ]; then
@@ -111,7 +111,7 @@ if [ -f /etc/nginx/sites-enabled/default ]; then
 fi
 
 # Enable site
-ln -sf /etc/nginx/sites-available/claritytherapy.app /etc/nginx/sites-enabled/
+ln -sf /etc/nginx/sites-available/leveragetherapy.com /etc/nginx/sites-enabled/
 
 # Test Nginx config
 nginx -t
@@ -159,18 +159,18 @@ echo "================================"
 echo ""
 echo "Your application is now running at:"
 echo "  http://$VPS_IP:3000"
-echo "  http://claritytherapy.app (after DNS propagates)"
+echo "  http://leveragetherapy.com (after DNS propagates)"
 echo ""
 echo "Next steps:"
 echo ""
-echo "1. Configure DNS for claritytherapy.app:"
+echo "1. Configure DNS for leveragetherapy.com:"
 echo "   - Add A record: @ → $VPS_IP"
 echo "   - Add A record: www → $VPS_IP"
 echo ""
 echo "2. Wait for DNS to propagate (5 mins - 48 hours)"
 echo ""
 echo "3. Set up SSL certificate:"
-echo "   certbot --nginx -d claritytherapy.app -d www.claritytherapy.app"
+echo "   certbot --nginx -d leveragetherapy.com -d www.leveragetherapy.com"
 echo ""
 echo "4. Your webhook API key is:"
 echo "   $WEBHOOK_KEY"

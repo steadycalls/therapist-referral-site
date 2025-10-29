@@ -1,10 +1,10 @@
-# Domain Setup Guide for claritytherapy.app
+# Domain Setup Guide for leveragetherapy.com
 
-This guide will help you configure your custom domain `claritytherapy.app` to point to your SSDNodes VPS.
+This guide will help you configure your custom domain `leveragetherapy.com` to point to your SSDNodes VPS.
 
 ## Step 1: Configure DNS Records
 
-Log in to your domain registrar (where you bought claritytherapy.app) and add these DNS records:
+Log in to your domain registrar (where you bought leveragetherapy.com) and add these DNS records:
 
 ### A Records (Required)
 
@@ -17,8 +17,8 @@ Log in to your domain registrar (where you bought claritytherapy.app) and add th
 
 ### Example:
 If your VPS IP is `123.45.67.89`:
-- `claritytherapy.app` → `123.45.67.89`
-- `www.claritytherapy.app` → `123.45.67.89`
+- `leveragetherapy.com` → `123.45.67.89`
+- `www.leveragetherapy.com` → `123.45.67.89`
 
 **Note:** DNS propagation can take 5 minutes to 48 hours. Usually it's within 1-2 hours.
 
@@ -28,8 +28,8 @@ Check if DNS is working:
 
 ```bash
 # Check from your local machine
-dig claritytherapy.app
-dig www.claritytherapy.app
+dig leveragetherapy.com
+dig www.leveragetherapy.com
 
 # Or use online tools:
 # https://dnschecker.org
@@ -51,10 +51,10 @@ Copy the Nginx configuration:
 cd /opt/therapist-referral-site
 
 # Copy the Nginx config to sites-available
-cp nginx/claritytherapy.app.conf /etc/nginx/sites-available/claritytherapy.app
+cp nginx/leveragetherapy.com.conf /etc/nginx/sites-available/leveragetherapy.com
 
 # Create symbolic link to enable the site
-ln -s /etc/nginx/sites-available/claritytherapy.app /etc/nginx/sites-enabled/
+ln -s /etc/nginx/sites-available/leveragetherapy.com /etc/nginx/sites-enabled/
 
 # Test Nginx configuration
 nginx -t
@@ -75,7 +75,7 @@ apt install certbot python3-certbot-nginx -y
 Get SSL certificate for your domain:
 
 ```bash
-certbot --nginx -d claritytherapy.app -d www.claritytherapy.app
+certbot --nginx -d leveragetherapy.com -d www.leveragetherapy.com
 ```
 
 Follow the prompts:
@@ -108,9 +108,9 @@ You can add domain-specific settings if needed, but the app should work as-is.
 ## Step 6: Test Your Site
 
 Visit your domain:
-- **HTTP:** http://claritytherapy.app (should redirect to HTTPS)
-- **HTTPS:** https://claritytherapy.app ✅
-- **WWW:** https://www.claritytherapy.app ✅
+- **HTTP:** http://leveragetherapy.com (should redirect to HTTPS)
+- **HTTPS:** https://leveragetherapy.com ✅
+- **WWW:** https://www.leveragetherapy.com ✅
 
 ## Firewall Configuration
 
@@ -129,7 +129,7 @@ ufw status
 ### DNS not resolving
 - Wait longer (DNS can take up to 48 hours)
 - Check DNS records at your registrar
-- Use `dig claritytherapy.app` to verify
+- Use `dig leveragetherapy.com` to verify
 
 ### "Connection refused" error
 - Check if Docker container is running: `docker-compose ps`
@@ -148,9 +148,9 @@ ufw status
 
 ## Optional: Redirect www to non-www (or vice versa)
 
-If you want `www.claritytherapy.app` to redirect to `claritytherapy.app`:
+If you want `www.leveragetherapy.com` to redirect to `leveragetherapy.com`:
 
-Edit `/etc/nginx/sites-available/claritytherapy.app`:
+Edit `/etc/nginx/sites-available/leveragetherapy.com`:
 
 ```nginx
 # Redirect www to non-www
@@ -159,12 +159,12 @@ server {
     listen [::]:80;
     listen 443 ssl http2;
     listen [::]:443 ssl http2;
-    server_name www.claritytherapy.app;
+    server_name www.leveragetherapy.com;
     
-    ssl_certificate /etc/letsencrypt/live/claritytherapy.app/fullchain.pem;
-    ssl_certificate_key /etc/letsencrypt/live/claritytherapy.app/privkey.pem;
+    ssl_certificate /etc/letsencrypt/live/leveragetherapy.com/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/leveragetherapy.com/privkey.pem;
     
-    return 301 https://claritytherapy.app$request_uri;
+    return 301 https://leveragetherapy.com$request_uri;
 }
 ```
 
@@ -211,7 +211,7 @@ Just point your DNS to Cloudflare instead of directly to your VPS.
 
 ### Check site status
 ```bash
-curl -I https://claritytherapy.app
+curl -I https://leveragetherapy.com
 ```
 
 ### Monitor SSL certificate expiry
@@ -221,7 +221,7 @@ certbot certificates
 
 ### Check Nginx access logs
 ```bash
-tail -f /var/log/nginx/claritytherapy.app.access.log
+tail -f /var/log/nginx/leveragetherapy.com.access.log
 ```
 
 ### Check application logs
@@ -258,13 +258,13 @@ cp .env .env.backup
 
 ## Quick Reference
 
-**Your domain:** https://claritytherapy.app  
-**Nginx config:** `/etc/nginx/sites-available/claritytherapy.app`  
-**SSL certs:** `/etc/letsencrypt/live/claritytherapy.app/`  
+**Your domain:** https://leveragetherapy.com  
+**Nginx config:** `/etc/nginx/sites-available/leveragetherapy.com`  
+**SSL certs:** `/etc/letsencrypt/live/leveragetherapy.com/`  
 **App directory:** `/opt/therapist-referral-site`  
-**Logs:** `/var/log/nginx/claritytherapy.app.*.log`
+**Logs:** `/var/log/nginx/leveragetherapy.com.*.log`
 
 ---
 
 **Once DNS propagates and SSL is configured, your site will be live at:**  
-🌐 **https://claritytherapy.app** 🎉
+🌐 **https://leveragetherapy.com** 🎉

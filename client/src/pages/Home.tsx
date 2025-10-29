@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Link } from "wouter";
 import { trpc } from "@/lib/trpc";
 import { Star, MessageCircle, Video, Phone, Mail, ArrowRight } from "lucide-react";
+import { SEO, getOrganizationSchema, getWebSiteSchema } from "@/components/SEO";
 
 export default function Home() {
   const { data: therapists, isLoading: therapistsLoading } = trpc.therapists.list.useQuery();
@@ -13,8 +14,43 @@ export default function Home() {
   const featuredTherapists = therapists?.slice(0, 3) || [];
   const latestPosts = blogPosts?.slice(0, 3) || [];
 
+  // Combined schema for homepage
+  const schema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      getOrganizationSchema(),
+      getWebSiteSchema(),
+      {
+        "@type": "WebPage",
+        "@id": "https://leveragetherapy.com/",
+        "url": "https://leveragetherapy.com/",
+        "name": "Find Your Perfect Therapist | Leverage Therapy",
+        "description": "Connect with licensed mental health professionals who specialize in your needs. Affordable, convenient, and confidential online therapy.",
+        "isPartOf": {
+          "@id": "https://leveragetherapy.com/#website"
+        },
+        "about": {
+          "@type": "Thing",
+          "name": "Mental Health Therapy"
+        },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "url": "https://leveragetherapy.com/og-image.jpg"
+        }
+      }
+    ]
+  };
+
   return (
-    <div className="min-h-screen">
+    <>
+      <SEO
+        title="Find Your Perfect Therapist"
+        description="Connect with licensed mental health professionals who specialize in your needs. Affordable, convenient, and confidential online therapy. Browse verified therapists or start online therapy today."
+        canonical="https://leveragetherapy.com/"
+        ogType="website"
+        schema={schema}
+      />
+      <div className="min-h-screen">
       {/* Header */}
       <header className="border-b bg-white sticky top-0 z-50">
         <div className="container py-4">
@@ -335,5 +371,6 @@ export default function Home() {
         </div>
       </footer>
     </div>
+    </>
   );
 }

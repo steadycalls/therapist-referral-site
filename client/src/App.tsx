@@ -5,6 +5,7 @@ import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
+import AIPromptTester from "./pages/AIPromptTester";
 import Therapists from "./pages/Therapists";
 import TherapistDetail from "./pages/TherapistDetail";
 import Blog from "./pages/Blog";
@@ -20,7 +21,7 @@ function Router() {
       <Route path="/therapist/:slug" component={TherapistDetail} />
       <Route path="/blog" component={Blog} />
       <Route path="/blog/:slug" component={BlogPost} />
-      <Route path="/services" component={Services} />
+      <Route path="/admin/ai-prompt-tester" component={AIPromptTester} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

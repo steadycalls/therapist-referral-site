@@ -83,3 +83,20 @@
 
 ## Bug Fixes
 - [x] Fix BetterHelp affiliate URL to use leveragetherapy instead of therapyconnect
+
+## Therapist Profile Enhancements
+- [x] Add comprehensive reviews and ratings section
+- [ ] Add comprehensive contact form to therapist profile pages
+- [ ] Enhance profile layout with better sections
+- [ ] Add credentials and education display
+- [ ] Add insurance and payment information section
+- [ ] Add availability/scheduling information
+
+## Reviews & Ratings System
+- [x] Create comprehensive reviews display section
+- [x] Add review submission form for therapist profiles
+- [x] Implement AI-powered collective review summary
+- [x] Add configurable prompt system for AI summaries
+- [x] Create testing interface for AI summary prompts
+- [x] Add star rating aggregation and display
+- [ ] Implement review sorting and filtering

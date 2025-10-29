@@ -5,10 +5,12 @@ import { publicProcedure, router, protectedProcedure } from "./_core/trpc";
 import { z } from "zod";
 import * as db from "./db";
 import { aiRouter } from "./aiRouter";
+import { aiReviewRouter } from "./aiReviewRouter";
 
 export const appRouter = router({
   system: systemRouter,
   ai: aiRouter,
+  aiReview: aiReviewRouter,
   auth: router({
     me: publicProcedure.query(opts => opts.ctx.user),
     logout: publicProcedure.mutation(({ ctx }) => {
@@ -100,6 +102,26 @@ export const appRouter = router({
           throw new Error("Unauthorized");
         }
         return await db.updateTherapist(input.id, input.data);
+      }),
+    
+    reviews: publicProcedure
+      .input(z.object({ therapistId: z.number() }))
+      .query(async ({ input }) => {
+        return await db.getTherapistReviews(input.therapistId, true);
+      }),
+    
+    submitReview: publicProcedure
+      .input(z.object({
+        therapistId: z.number(),
+        rating: z.number().min(1).max(5),
+        reviewText: z.string(),
+        reviewerName: z.string(),
+      }))
+      .mutation(async ({ input }) => {
+        return await db.createReview({
+          ...input,
+          isApproved: false, // Reviews need admin approval
+        });
       }),
   }),
 

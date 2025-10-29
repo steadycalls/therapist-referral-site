@@ -15,6 +15,13 @@
       "when": 1761692752837,
       "tag": "0001_striped_maestro",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1761754890764,
+      "tag": "0002_loving_black_bird",
+      "breakpoints": true
     }
   ]
 }
